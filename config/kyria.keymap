@@ -8,7 +8,8 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/rgb.h>
-#define Default 0
+#include <dt-bindings/zmk/outputs.h>
+#define DEFAULT 0
 #define UPPER   1
 / {
 	keymap {
@@ -18,28 +19,28 @@
 // ---------------------------------------------------------------------------------------------------------------------------------
 // |  ESC  |  Q  |  W  |  E   |  R   |  T   |                                          |  Y   |  U    |  I    |  O   |   P   | Backspace |
 // |  TAB  |  A  |  S  |  D   |  F   |  G   |                                          |  H   |  J    |  K    |  L   |   ;   |   '  |
-// | SHIFT |  Z  |  X  |  C   |  V   |  B   | SPACE | UPPER |  | UPPER | SPACE |  N   |  M    |  ,    |  .   |   /   | CTRL |
-//               | BT CLR | BT NXT | BT PRV | SPACE | UPPER |  | UPPER | SPACE | Backspace | R-ALT  | R-CTRL |
+// | SHIFT |  Z  |  X  |  C   |  V   |  B   | SPACE | OUT-TOG |  | UPPER | SPACE |  N   |  M    |  ,    |  .   |   /   | R- CTRL |
+//                     | LGUI | ???? | RETURN | SPACE | UPPER |  | UPPER | SPACE | Backspace | R-ALT  | R-CTRL |
 			bindings = <
 	&kp ESC   &kp Q &kp W &kp E &kp R &kp T                                                &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSPC
 	&kp TAB   &kp A &kp S &kp D &kp F &kp G                                                &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
-	&kp LSHFT &kp Z &kp X &kp C &kp V &kp B &kp SPACE &mo UPPER                 &mo UPPER &kp SPACE &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp RCTRL
-	          &bt BT_CLR &bt BT_NXT &bt BT_PRV &kp SPACE &mo UPPER              &mo UPPER &kp SPACE &kp BSPC &kp RALT &kp RCTRL
+	&kp LSHFT &kp Z &kp X &kp C &kp V &kp B &kp SPACE &out OUT_TOG              &mo UPPER &kp SPACE &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp RCTRL
+	            &kp LGUI &kp LCTRL &kp RET  &kp SPACE &mo UPPER                 &mo UPPER &kp SPACE &kp BSPC &kp RALT &kp RCTRL
 			>;
 
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
-		};
+		};                                                                                                                     
 		Upper_layer {
 // ---------------------------------------------------------------------------------------------------------------------------------
 // |  ESC  |  1  |  2  |  3   |  4   |  5   |                                          |  6   |  7    |  8    |  9   |   0   |   -  |
-// |  TAB  |  !  |  @  |  #   |  $   |  %   |                                          |  ^   |  &    |  *    |  (   |   )   |   _  |
-// | SHIFT |  Z  |  X  |  C   |  V   |  B   |  SPACE | L SHIFT |  | L SHIFT |  SPACE |  N   |  M    |  ,    |  .   |   /   | CTRL |
-//                     | GUI  | DEL  | RET  |  SPACE  | L SHIFT|  | L SHIFT |  SPACE | RGB+  | RGB-  | RGB-TOGGLE |
+// |  CAP  |  !  |  @  |  #   |  $   |  %   |                                          |  ^   |  &    |  *    |  (   |   )   |   _  |
+// | SHIFT |  Z  |  X  |  C   |  V   |  B   |  SPACE  | L SHIFT |   | L SHIFT |  SPACE |  N   |  M    |  ,    | UP | LEFT | R-CTRL|
+//               | BT CLR | BT NXT | BT PRV |  SPACE  | L SHIFT |   | L SHIFT |  SPACE | RGB+  | R-ARROW  | DOWN |
 			bindings = <
 	&kp ESC   &kp N1 &kp N2 &kp N3 &kp N4 &kp N5                                           &kp N6 &kp N7 &kp N8 &kp N9 &kp N0 &kp BSLH
-	&kp TAB   &kp EXCL &kp AT &kp HASH  &kp DLLR &kp PRCNT                                 &kp CARET &kp AMPS &kp STAR &kp LPAR &kp RPAR &kp UNDER
-	&kp LSHFT &kp Z &kp X &kp C &kp V &kp B &kp SPACE &kp LSHFT        &kp LSHFT &kp SPACE &kp N &kp M  &kp COMMA &kp DOT &kp FSLH  &kp RCTRL
-	                &kp LGUI &kp DEL &kp RET &kp SPACE &kp LSHFT       &kp LSHFT &kp SPACE &rgb_ug RGB_BRI &rgb_ug RGB_BRD &rgb_ug RGB_TOG
+	&kp CAPS   &kp EXCL &kp AT &kp HASH  &kp DLLR &kp PRCNT                                 &kp CARET &kp AMPS &kp STAR &kp LPAR &kp RPAR &kp UNDER
+	&kp LSHFT &kp Z &kp X &kp C &kp V &kp B &kp SPACE &mo UPPER                &mo UPPER &kp SPACE &kp N &kp M  &kp COMMA &kp UP &kp LEFT  &kp RCTRL
+	       &bt BT_CLR &bt BT_NXT &bt BT_PRV &kp SPACE &mo UPPER                &mo UPPER &kp SPACE &kp BSPC &kp RIGHT &kp DOWN
 			>;
 
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
