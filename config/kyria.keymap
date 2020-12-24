@@ -8,44 +8,25 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/rgb.h>
-#define Default 0
-#define Upper   1
-#define Lower   2
 
 / {
 	keymap {
 		compatible = "zmk,keymap";
 
-		Default {
+		default_layer {
 // ---------------------------------------------------------------------------------------------------------------------------------
 // |  ESC  |  Q  |  W  |  E   |  R   |  T   |                                          |  Y   |  U    |  I    |  O   |   P   |   \  |
 // |  TAB  |  A  |  S  |  D   |  F   |  G   |                                          |  H   |  J    |  K    |  L   |   ;   |   '  |
-// | SHIFT |  Z  |  X  |  C   |  V   |  B   |  SPACE  | Upper |  | Upper |  SPACE  |  N   |  M    |  ,    |  .   |   /   | CTRL |
-//                     |BT_CLR|BT_NXT|BT_PRV|  SPACE  | Upper |  | Upper |  SPACE  | RGB_BRI  | RGB_BRD  | RGB_TOG |
+// | SHIFT |  Z  |  X  |  C   |  V   |  B   | SPACE | L SHIFT |  | L SHIFT | SPACE |  N   |  M    |  ,    |  .   |   /   | CTRL |
+//                     | GUI  | DEL  | RET  |  SPACE  |   ESC   |  |   RET   |  SPACE  | TAB  | BSPC  | R-ALT |
 			bindings = <
 	&kp ESC   &kp Q &kp W &kp E &kp R &kp T                                                &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSLH
 	&kp TAB   &kp A &kp S &kp D &kp F &kp G                                                &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
-	&kp LSHFT &kp Z &kp X &kp C &kp V &kp B &kp SPACE &mo Upper        &mo Upper &kp SPACE &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp RCTRL
-	                &bt BT_CLR &bt BT_NXT &bt BT_PRV &kp SPACE &mo Upper        &mo Upper  &kp SPACE  &rgb_ug RGB_BRI &rgb_ug RGB_BRD &rgb_ug RGB_TOG
+	&kp LSHFT &kp Z &kp X &kp C &kp V &kp B &kp LSHFT &kp LSHFT        &kp LSHFT &kp SPACE &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp RCTRL
+	                 &kp LGUI &kp DEL &kp RET &kp SPACE &kp ESC        &kp RET  &kp SPACE  &rgb_ug RGB_BRI &rgb_ug RGB_BRD &rgb_ug RGB_TOG
 			>;
 
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
 		};
-		Upper {
-// ---------------------------------------------------------------------------------------------------------------------------------
-// |  ESC  |  Q  |  W  |  E   |  R   |  T   |                                          |  Y   |  U    |  I    |  O   |   P   |   \  |
-// |  TAB  |  A  |  S  |  D   |  F   |  G   |                                          |  H   |  J    |  K    |  L   |   ;   |   '  |
-// | SHIFT |  Z  |  X  |  C   |  V   |  B   | L SHIFT | L SHIFT |  | L SHIFT | L SHIFT |  N   |  M    |  ,    |  .   |   /   | CTRL |
-//                     | GUI  | DEL  | RET  |  SPACE  |   ESC   |  |   RET   |  SPACE  | TAB  | BSPC  | R-ALT |
-			bindings = <
-	&kp ESC   &kp 1 &kp 2 &kp 3 &kp 4 &kp 5                                                &kp 6 &kp 7  &kp 8     &kp 9   &kp 10    &kp BSLH
-	&kp TAB   &kp ! &kp @ &kp #  &kp $ &kp %                                               &kp ^ &kp &  &kp *     &kp (   &kp )     &kp SQT
-	&kp LSHFT &kp Z &kp X &kp C &kp V &kp B &kp SPACE &kp LSHFT        &kp LSHFT &kp LSHFT &kp N &kp M  &kp COMMA &kp DOT &kp FSLH  &kp RCTRL
-	                 &kp LGUI &kp DEL &kp RET &kp SPACE &kp ESC        &kp RET  &kp SPACE  &kp TAB &kp BSPC &kp RALT
-			>;`n
-
-			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
-
-		};		
 	};
 };
