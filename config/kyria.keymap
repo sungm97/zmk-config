@@ -11,6 +11,7 @@
 #include <dt-bindings/zmk/outputs.h>
 #define DEFAULT 0
 #define UPPER   1
+#define RAISE   2
 / {
 	keymap {
 		compatible = "zmk,keymap";
@@ -20,12 +21,12 @@
 // |  ESC  |  Q  |  W  |  E   |  R   |  T   |                                          |  Y   |  U    |  I    |  O   |   P   | Backspace |
 // |  TAB  |  A  |  S  |  D   |  F   |  G   |                                          |  H   |  J    |  K    |  L   |   ;   |   '  |
 // | SHIFT |  Z  |  X  |  C   |  V   |  B   | SPACE | OUT-TOG |  | UPPER | SPACE |  N   |  M    |  ,    |  .   |   /   | R- CTRL |
-//                     | LGUI | ???? | RETURN | SPACE | UPPER |  | UPPER | SPACE | Backspace | R-ALT  | R-CTRL |
+//                     | LGUI | L-CTRL | L-ALT | SPACE | UPPER |  | UPPER | SPACE | ENTER | R-ALT  | R-CTRL |
 			bindings = <
 	&kp ESC   &kp Q &kp W &kp E &kp R &kp T                                                &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSPC
 	&kp TAB   &kp A &kp S &kp D &kp F &kp G                                                &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
-	&kp LSHFT &kp Z &kp X &kp C &kp V &kp B &kp SPACE &out OUT_TOG              &mo UPPER &kp SPACE &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp RCTRL
-	            &kp LGUI &kp LCTRL &kp RET  &kp SPACE &mo UPPER                 &mo UPPER &kp SPACE &kp BSPC &kp RALT &kp RCTRL
+	&kp LSHFT &kp Z &kp X &kp C &kp V &kp B &kp SPACE &out OUT_TOG               &mo UPPER &kp SPACE &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp RCTRL
+	            &kp LGUI &kp LCTRL &kp LALT  &kp SPACE &mo UPPER                 &mo UPPER &kp SPACE &kp ENTER &kp RALT &kp RCTRL
 			>;
 
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
@@ -34,16 +35,16 @@
 // ---------------------------------------------------------------------------------------------------------------------------------
 // |  ESC  |  1  |  2  |  3   |  4   |  5   |                                          |  6   |  7    |  8    |  9   |   0   |   -  |
 // |  CAP  |  !  |  @  |  #   |  $   |  %   |                                          |  ^   |  &    |  *    |  (   |   )   |   _  |
-// | SHIFT |  Z  |  X  |  C   |  V   |  B   |  SPACE  | L SHIFT |   | L SHIFT |  SPACE |  N   |  M    |  ,    | UP | LEFT | R-CTRL|
-//               | BT CLR | BT NXT | BT PRV |  SPACE  | L SHIFT |   | L SHIFT |  SPACE | RGB+  | R-ARROW  | DOWN |
+// | SHIFT |  Z  |  X  |  C   |  V   |  B   |  SPACE  | L SHIFT |   | L SHIFT |  SPACE |  N   |  M    |  ,    | UP | RIGHT | R-CTRL|
+//               | BT CLR | BT NXT | BT PRV |  SPACE  | L SHIFT |   | L SHIFT |  SPACE | RGB+  | LEFT  | DOWN |
 			bindings = <
-	&kp ESC   &kp N1 &kp N2 &kp N3 &kp N4 &kp N5                                           &kp N6 &kp N7 &kp N8 &kp N9 &kp N0 &kp BSLH
+	&kp ESC   &kp N1 &kp N2 &kp N3 &kp N4 &kp N5                                           &kp N6 &kp N7 &kp N8 &kp N9 &kp N0 &kp MINUS
 	&kp CAPS   &kp EXCL &kp AT &kp HASH  &kp DLLR &kp PRCNT                                 &kp CARET &kp AMPS &kp STAR &kp LPAR &kp RPAR &kp UNDER
-	&kp LSHFT &kp Z &kp X &kp C &kp V &kp B &kp SPACE &mo UPPER                &mo UPPER &kp SPACE &kp N &kp M  &kp COMMA &kp UP &kp LEFT  &kp RCTRL
-	       &bt BT_CLR &bt BT_NXT &bt BT_PRV &kp SPACE &mo UPPER                &mo UPPER &kp SPACE &kp BSPC &kp RIGHT &kp DOWN
+	&kp LSHFT &kp Z &kp X &kp C &kp V &kp B &kp SPACE &mo UPPER                &mo UPPER &kp SPACE &kp N &kp M  &kp COMMA &kp UP &kp RIGHT  &kp RCTRL
+	       &bt BT_CLR &bt BT_NXT &bt BT_PRV &kp SPACE &mo UPPER                &mo UPPER &kp SPACE &kp BSPC &kp LEFT &kp DOWN
 			>;
 
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
 		};
 	};
-};
+};	
