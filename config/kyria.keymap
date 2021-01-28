@@ -35,13 +35,13 @@
 // ---------------------------------------------------------------------------------------------------------------------------------
 // |  ESC  |  !  |  @  |  #   |  $   |  %   |                                          |  ^   |  &    |  *    |  (  |   )  |Backspace|
 // |  CAP  |  1  |  2  |  3   |  4   |  5   |                                          |  6   |  7    |  8    |  9  |   0  |  -  |
-// | L-SHIFT | RGB-TOG  | RGB_BRI | RGB_BRD | V | _ | SPACE | L SHIFT |   | L SHIFT | ENTER |  +  |   =  | , | . | RIGHT | R-CTRL|
-//                       | BT CLR | BT NXT | BT PRV | SPACE | L SHIFT |   | L SHIFT | ENTER | LEFT  | DOWN  | UP |
+// | L-SHIFT | ~ | DELETE | PSCRN | BACKSLASH | _ | SPACE | L SHIFT |   | L SHIFT | ENTER |  +  |   =  | , | . | RIGHT | R-CTRL|
+//                     | BT CLR | BT NXT | BT PRV | SPACE | L SHIFT |   | L SHIFT | ENTER | LEFT  | DOWN  | UP |
 			bindings = <
 	&kp ESC   &kp EXCL &kp AT &kp HASH  &kp DLLR &kp PRCNT                                       &kp CARET &kp AMPS &kp STAR &kp LPAR &kp RPAR &kp BSPC
 	&kp CAPS  &kp N1 &kp N2 &kp N3 &kp N4 &kp N5                                                 &kp N6 &kp N7 &kp N8 &kp N9 &kp N0 &kp MINUS
-	&kp LSHFT &rgb_ug RGB_TOG &rgb_ug RGB_BRI &rgb_ug RGB_BRD &kp V &kp UNDER &kp SPACE &mo UPPER                &mo UPPER &kp SPACE &kp PLUS &kp EQUAL  &kp COMMA &kp DOT &kp RIGHT  &kp RCTRL
-	                                &bt BT_CLR &bt BT_NXT &bt BT_PRV &kp SPACE &mo UPPER                         &mo UPPER &kp SPACE &kp LEFT &kp DOWN &kp UP
+	&kp LSHFT &kp TILDE &kp DELETE &kp PSCRN &kp BSLH &kp UNDER &kp SPACE &mo UPPER              &mo UPPER &kp SPACE &kp PLUS &kp EQUAL  &kp COMMA &kp DOT &kp RIGHT  &kp RCTRL
+	                           &bt BT_CLR &bt BT_NXT &bt BT_PRV &kp SPACE &mo UPPER              &mo UPPER &kp SPACE &kp LEFT &kp DOWN &kp UP
 			>;
 
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
