@@ -46,21 +46,7 @@
 
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
 		};
-		Lower_layer {
-// ---------------------------------------------------------------------------------------------------------------------------------
-// |  BT CLR   | BT NXT | BT PRV |  & |  &  | & |                   | & |  & | & | & | & | & |
-// |  &  |  &  | & |  &   |  &   |  &  |                         | & |  & | & | & | & | & |
-// | & | & | & | & | & | & | & | & |                          | LOWER | & | & |  &  | & | & | & | &|
-//                     | & | & | & | & | & |                  | UPPER | & | & |  &  | & |
-			bindings = <
-	&bt BT_CLR &bt BT_NXT &bt BT_PRV &kp AMPS  &kp AMPS &kp AMPS                               &kp AMPS &kp AMPS &kp AMPS &kp AMPS &kp AMPS &kp AMPS
-	&kp AMPS   &kp AMPS   &kp AMPS &kp AMPS &kp AMPS &kp AMPS                                  &kp AMPS &kp AMPS &kp AMPS &kp AMPS &kp AMPS &kp AMPS
-	&kp AMPS   &kp AMPS   &kp AMPS &kp AMPS &kp AMPS &kp AMPS &kp AMPS &kp AMPS      &mo LOWER &kp AMPS &kp AMPS &kp AMPS &kp AMPS &kp AMPS &kp AMPS  &kp AMPS
-	                           &kp AMPS &kp AMPS &kp AMPS &kp AMPS &kp AMPS          &mo UPPER &kp AMPS &kp AMPS &kp AMPS &kp AMPS
-			>;
-
-			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
-	};
+	
 };
 
 
